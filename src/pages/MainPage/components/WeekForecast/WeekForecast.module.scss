@@ -1,0 +1,56 @@
+@import "../../../../scss/variables.scss";
+
+.root {
+  box-sizing: border-box;
+  display: grid;
+  width: 80vw;
+  height: 370px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 20px;
+  grid-template-areas: ". . . .";
+  border-radius: 20px;
+  padding: 50px;
+  margin-top: 50px;
+  box-shadow: 2px 5px 25px -3px rgba(180, 180, 180, 0.25);
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  @media screen and (max-width: 600px) {
+    width: auto;
+    max-width: 80vw;
+  }
+
+}
+
+.dayForecast {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-left: 20px;
+  width: 200px;
+  height: 280px;
+  background-color: $skyblue;
+  border-radius: 10px;
+
+
+  h3 {
+    font-weight: 200;
+    margin-bottom: 15px;
+  }
+
+  span {
+    color: $gray;
+    margin-bottom: 15px;
+  }
+
+  span:nth-child(4){
+    font-size: 1.5em;
+    color: black;
+    margin-bottom: 5px;
+  }
+
+  svg {
+    margin-bottom: 15px;
+  }
+}

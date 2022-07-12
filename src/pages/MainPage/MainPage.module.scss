@@ -1,0 +1,25 @@
+.root{
+  background: white;
+  width: 80vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  @media screen and (max-width: 600px) {
+    width: 100vw;
+  }
+}
+
+.currentWeatherContainer {
+  display: flex;
+  width: 80vw;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: row;
+
+  @media screen and (max-width: 1150px) {
+    flex-wrap: wrap
+  }
+}
