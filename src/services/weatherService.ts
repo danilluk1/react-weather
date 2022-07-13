@@ -4,7 +4,7 @@ import { Forecast } from "../models/Forecast";
 export default class WeatherService {
 
 
-  static fetchCurrentWeather(city: string) : Promise<any> {
-    return $api.get<Forecast>(`?=${city}`);
+  static async getCurrentWeather(city: string) {
+    return await $api.get<Forecast>(`?q=${city}&lang=ru&units=metric`);
   }
 }

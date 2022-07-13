@@ -4,13 +4,14 @@
   box-sizing: border-box;
   display: grid;
   width: 80vw;
-  height: 370px;
+  height: 320px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 0px 20px;
   grid-template-areas: ". . . .";
   border-radius: 20px;
-  padding: 50px;
+  padding-left: 50px;
+  padding-top: 20px;
   margin-top: 50px;
   box-shadow: 2px 5px 25px -3px rgba(180, 180, 180, 0.25);
   overflow-x: auto;

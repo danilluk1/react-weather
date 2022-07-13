@@ -2,11 +2,13 @@ import React from "react";
 import GlobalSvgSelector from "../../assets/icons/global/GlobalSvgSelector";
 import styles from "./Header.module.scss";
 import Select from "react-select";
+import { useAppDispatch } from "../../redux/store";
+import { setCity } from "../../redux/slices/weatherSlice";
 
 const options = [
-  { value: "Shadrinsk", label: "Шадринск" },
-  { value: "Moscow", label: "Москва" },
-  { value: "London", label: "Лондон" },
+  { value: "Shadrinsk,ru", label: "Шадринск" },
+  { value: "Moscow,ru", label: "Москва" },
+  { value: "London,uk", label: "Лондон" },
 ];
 
 const colourStyles = {
@@ -22,6 +24,8 @@ const colourStyles = {
 };
 
 const Header: React.FC = () => {
+  const dispatch = useAppDispatch();
+  
   return (
     <div className={styles.root}>
       <div className={styles.logo}>
@@ -34,6 +38,8 @@ const Header: React.FC = () => {
           styles={colourStyles}
           options={options}
           placeholder={"Выберите город"}
+          defaultValue={options[0]}
+          onChange={(e) => dispatch(setCity(e?.value ?? ''))}
         />
       </div>
     </div>

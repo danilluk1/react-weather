@@ -1,25 +1,36 @@
+import { current } from "@reduxjs/toolkit";
 import React from "react";
 import GlobalSvgSelector from "../../../../assets/icons/global/GlobalSvgSelector";
+import { useAppSelector } from "../../../../redux/store";
 import styles from "./CurrentWeatherShort.module.scss";
 
 const CurrentWeatherShort = () => {
+  const currentWeather = useAppSelector(
+    (state) => state.weather.currentWeather
+  );
+
   return (
     <div className={styles.root}>
-      <div className={styles.aboutWeather}>
-        <div className={styles.tempCurrent}>
-          <span>
-            20<span>&#176;</span>
-          </span>
-          <span>Сегодня</span>
-        </div>
-        <div className={styles.weatherSvgContainer}>
-          <GlobalSvgSelector id={"sunny"} />
-        </div>
-      </div>
-      <div className={styles.aboutLocation}>
-        <span>Время: 21:54</span>
-        <span>Город: Санкт-Петербург</span>
-      </div>
+      {currentWeather && (
+        <>
+          <div className={styles.aboutWeather}>
+            <div className={styles.tempCurrent}>
+              <span>
+                {currentWeather.main.temp_max.toFixed(0)}
+                <span>&#176;</span>
+              </span>
+              <span>Сегодня</span>
+            </div>
+            <div className={styles.weatherSvgContainer}>
+              <GlobalSvgSelector id={currentWeather.weather[0].main} />
+            </div>
+          </div>
+          <div className={styles.aboutLocation}>
+            <span>Время: {currentWeather.dt_txt}</span>
+            <span>Город: {currentWeather.name}</span>
+          </div>
+        </>
+      )}
     </div>
   );
 };
