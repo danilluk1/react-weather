@@ -40,4 +40,4 @@ OpenWeather не ползволяет получать из бесплатног
 
 ### Примеры
 
-Можно протестировать на [link](https://book-search-alpha.vercel.app/)
+Можно протестировать на [link](https://react-weather-tau.vercel.app/)
